@@ -1,0 +1,1204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Career & Livelihood Guidance</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        header {
+            background: #111827;
+            color: white;
+            padding: 25px;
+            text-align: center;
+            border-radius: 15px;
+            margin-bottom: 25px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+        }
+
+        header h1 {
+            font-size: 30px;
+            margin-bottom: 8px;
+        }
+
+        header p {
+            color: #d1d5db;
+            font-size: 16px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+        }
+
+        .card h2 {
+            color: #4f46e5;
+            margin-bottom: 10px;
+        }
+
+        .card-description {
+            color: #555;
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-top: 15px;
+            margin-bottom: 6px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        input,
+        select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 15px;
+        }
+
+        input:focus,
+        select:focus {
+            outline: none;
+            border-color: #6366f1;
+        }
+
+        button {
+            width: 100%;
+            margin-top: 20px;
+            padding: 13px;
+            border: none;
+            border-radius: 8px;
+            background: #4f46e5;
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #3730a3;
+        }
+
+        .results {
+            margin-top: 25px;
+        }
+
+        .result-card {
+            background: #f8fafc;
+            border-left: 5px solid #4f46e5;
+            padding: 18px;
+            margin-bottom: 15px;
+            border-radius: 8px;
+        }
+
+        .result-card h3 {
+            color: #312e81;
+            margin-bottom: 8px;
+        }
+
+        .score {
+            display: inline-block;
+            background: #dcfce7;
+            color: #166534;
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .result-card p {
+            margin: 7px 0;
+            line-height: 1.5;
+            color: #374151;
+        }
+
+        .result-card ul {
+            margin: 8px 0 8px 20px;
+            color: #374151;
+        }
+
+        .result-card li {
+            margin-bottom: 5px;
+        }
+
+        .tag {
+            display: inline-block;
+            background: #e0e7ff;
+            color: #3730a3;
+            padding: 5px 9px;
+            border-radius: 15px;
+            margin: 3px;
+            font-size: 13px;
+        }
+
+        .empty {
+            color: #777;
+            text-align: center;
+            padding: 15px;
+        }
+
+        .footer {
+            text-align: center;
+            color: white;
+            margin-top: 25px;
+            font-size: 14px;
+        }
+
+        .info-box {
+            background: #eef2ff;
+            border-radius: 8px;
+            padding: 12px;
+            margin-top: 15px;
+            color: #3730a3;
+            font-size: 14px;
+        }
+
+        @media (max-width: 800px) {
+            .cards {
+                grid-template-columns: 1fr;
+            }
+
+            header h1 {
+                font-size: 24px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- HEADER -->
+    <header>
+        <h1>🚀 Career & Livelihood Guidance Platform</h1>
+        <p>Personalized career paths for students & livelihood opportunities for rural youth</p>
+    </header>
+
+
+    <div class="cards">
+
+        <!-- STUDENT SECTION -->
+        <div class="card">
+
+            <h2>🎓 Student Career Guidance</h2>
+
+            <p class="card-description">
+                Enter your education, skills and interests to receive personalized career recommendations.
+            </p>
+
+            <label for="studentName">Name</label>
+            <input
+                type="text"
+                id="studentName"
+                placeholder="Enter your name"
+            >
+
+            <label for="eduLevel">Education Level</label>
+            <select id="eduLevel">
+                <option value="">Select education</option>
+                <option value="12th Pass">12th Pass</option>
+                <option value="Diploma">Diploma</option>
+                <option value="Bachelor's">Bachelor's</option>
+                <option value="Master's">Master's</option>
+            </select>
+
+            <label for="skills">Skills</label>
+            <input
+                type="text"
+                id="skills"
+                placeholder="Example: Python, HTML, CSS"
+            >
+
+            <label for="interest">Career Interest</label>
+            <select id="interest">
+                <option value="">Select interest</option>
+                <option value="IT/Software">IT / Software</option>
+                <option value="Finance">Finance</option>
+                <option value="Healthcare">Healthcare</option>
+                <option value="Engineering">Engineering</option>
+            </select>
+
+            <button onclick="recommendCareer()">
+                🔍 Find My Career
+            </button>
+
+            <div id="studentResults" class="results"></div>
+
+        </div>
+
+
+        <!-- RURAL SECTION -->
+        <div class="card">
+
+            <h2>🌾 Rural Livelihood Guidance</h2>
+
+            <p class="card-description">
+                Find suitable livelihood opportunities based on your location and experience.
+            </p>
+
+            <label for="ruralName">Name</label>
+            <input
+                type="text"
+                id="ruralName"
+                placeholder="Enter your name"
+            >
+
+            <label for="state">State</label>
+            <select id="state">
+                <option value="">Select state</option>
+                <option value="Maharashtra">Maharashtra</option>
+                <option value="Karnataka">Karnataka</option>
+                <option value="Tamil Nadu">Tamil Nadu</option>
+                <option value="Uttar Pradesh">Uttar Pradesh</option>
+            </select>
+
+            <label for="experience">Work Experience</label>
+            <select id="experience">
+                <option value="">Select experience</option>
+                <option value="No experience">No experience</option>
+                <option value="1-2 years">1-2 years</option>
+                <option value="2-5 years">2-5 years</option>
+                <option value="5+ years">5+ years</option>
+            </select>
+
+            <label for="language">Preferred Language</label>
+            <select id="language">
+                <option value="">Select language</option>
+                <option value="Hindi">Hindi</option>
+                <option value="Marathi">Marathi</option>
+                <option value="Tamil">Tamil</option>
+                <option value="Kannada">Kannada</option>
+                <option value="English">English</option>
+            </select>
+
+            <button onclick="findRuralOpportunities()">
+                🌱 Find Opportunities
+            </button>
+
+            <div id="ruralResults" class="results"></div>
+
+        </div>
+
+    </div>
+
+
+    <div class="footer">
+        <p>💡 Prototype for Career & Livelihood Guidance Hackathon Project</p>
+    </div>
+
+</div>
+
+
+<script>
+
+/* =========================================================
+   CAREER DATASET
+   ========================================================= */
+
+const careerData = [
+
+    {
+        name: "Web Developer",
+
+        interests: ["IT/Software"],
+
+        education: [
+            "12th Pass",
+            "Diploma",
+            "Bachelor's",
+            "Master's"
+        ],
+
+        skills: [
+            "html",
+            "css",
+            "javascript"
+        ],
+
+        develop: [
+            "JavaScript",
+            "Responsive Web Design",
+            "Git & GitHub",
+            "React"
+        ],
+
+        projects: [
+            "Personal Portfolio Website",
+            "College Event Website",
+            "Online To-Do Application"
+        ],
+
+        roadmap: [
+            "Learn HTML",
+            "Learn CSS",
+            "Learn JavaScript",
+            "Learn Git and GitHub",
+            "Build 3 projects",
+            "Learn React",
+            "Create a portfolio"
+        ]
+    },
+
+
+    {
+        name: "Python Developer",
+
+        interests: ["IT/Software"],
+
+        education: [
+            "Diploma",
+            "Bachelor's",
+            "Master's"
+        ],
+
+        skills: [
+            "python",
+            "programming",
+            "c"
+        ],
+
+        develop: [
+            "Python",
+            "Object-Oriented Programming",
+            "SQL",
+            "APIs"
+        ],
+
+        projects: [
+            "Calculator",
+            "Student Management System",
+            "Weather Application"
+        ],
+
+        roadmap: [
+            "Learn Python basics",
+            "Learn functions",
+            "Learn OOP",
+            "Learn SQL",
+            "Build projects",
+            "Learn APIs",
+            "Apply for internships"
+        ]
+    },
+
+
+    {
+        name: "AI / ML Engineer",
+
+        interests: ["IT/Software"],
+
+        education: [
+            "Bachelor's",
+            "Master's"
+        ],
+
+        skills: [
+            "python",
+            "machine learning",
+            "data science",
+            "programming"
+        ],
+
+        develop: [
+            "Python",
+            "Statistics",
+            "Machine Learning",
+            "NumPy",
+            "Pandas",
+            "Scikit-learn"
+        ],
+
+        projects: [
+            "Student Performance Predictor",
+            "House Price Predictor",
+            "Simple Recommendation System"
+        ],
+
+        roadmap: [
+            "Learn Python",
+            "Learn mathematics and statistics",
+            "Learn NumPy and Pandas",
+            "Learn machine learning",
+            "Build ML projects",
+            "Create GitHub portfolio",
+            "Apply for internships"
+        ]
+    },
+
+
+    {
+        name: "Data Analyst",
+
+        interests: [
+            "IT/Software",
+            "Finance"
+        ],
+
+        education: [
+            "Bachelor's",
+            "Master's"
+        ],
+
+        skills: [
+            "python",
+            "excel",
+            "sql",
+            "data"
+        ],
+
+        develop: [
+            "Excel",
+            "SQL",
+            "Python",
+            "Data Visualization",
+            "Power BI"
+        ],
+
+        projects: [
+            "College Student Data Analysis",
+            "Sales Dashboard",
+            "COVID Data Visualization"
+        ],
+
+        roadmap: [
+            "Learn Excel",
+            "Learn SQL",
+            "Learn Python",
+            "Learn Pandas",
+            "Learn Power BI",
+            "Build dashboards",
+            "Apply for internships"
+        ]
+    },
+
+
+    {
+        name: "Cybersecurity Analyst",
+
+        interests: ["IT/Software"],
+
+        education: [
+            "Diploma",
+            "Bachelor's",
+            "Master's"
+        ],
+
+        skills: [
+            "networking",
+            "linux",
+            "python",
+            "cybersecurity"
+        ],
+
+        develop: [
+            "Computer Networks",
+            "Linux",
+            "Cybersecurity Basics",
+            "Python",
+            "Security Tools"
+        ],
+
+        projects: [
+            "Password Strength Checker",
+            "Network Monitoring Dashboard",
+            "Cybersecurity Awareness Website"
+        ],
+
+        roadmap: [
+            "Learn networking",
+            "Learn Linux",
+            "Learn cybersecurity basics",
+            "Learn Python",
+            "Practice security labs",
+            "Build security projects",
+            "Prepare for internships"
+        ]
+    },
+
+
+    {
+        name: "Software Engineer",
+
+        interests: ["IT/Software"],
+
+        education: [
+            "Diploma",
+            "Bachelor's",
+            "Master's"
+        ],
+
+        skills: [
+            "c",
+            "c++",
+            "java",
+            "python",
+            "programming"
+        ],
+
+        develop: [
+            "Data Structures",
+            "Algorithms",
+            "Programming",
+            "Git",
+            "Database Systems"
+        ],
+
+        projects: [
+            "Student Management System",
+            "Library Management System",
+            "Online Quiz Application"
+        ],
+
+        roadmap: [
+            "Learn programming fundamentals",
+            "Learn Data Structures",
+            "Learn Algorithms",
+            "Learn databases",
+            "Learn Git",
+            "Build projects",
+            "Prepare for interviews"
+        ]
+    },
+
+
+    {
+        name: "Financial Analyst",
+
+        interests: ["Finance"],
+
+        education: [
+            "Bachelor's",
+            "Master's"
+        ],
+
+        skills: [
+            "excel",
+            "finance",
+            "accounting",
+            "data"
+        ],
+
+        develop: [
+            "Advanced Excel",
+            "Financial Analysis",
+            "Accounting",
+            "Data Visualization"
+        ],
+
+        projects: [
+            "Personal Budget Tracker",
+            "Stock Market Dashboard",
+            "Financial Report Analysis"
+        ],
+
+        roadmap: [
+            "Learn accounting basics",
+            "Learn Excel",
+            "Learn financial analysis",
+            "Learn data visualization",
+            "Build financial projects",
+            "Learn Power BI",
+            "Apply for internships"
+        ]
+    },
+
+
+    {
+        name: "Healthcare Data Analyst",
+
+        interests: ["Healthcare"],
+
+        education: [
+            "Bachelor's",
+            "Master's"
+        ],
+
+        skills: [
+            "python",
+            "data",
+            "excel",
+            "statistics"
+        ],
+
+        develop: [
+            "Statistics",
+            "Python",
+            "Excel",
+            "Data Visualization",
+            "Healthcare Data"
+        ],
+
+        projects: [
+            "Hospital Data Dashboard",
+            "Patient Data Analysis",
+            "Healthcare Trend Analysis"
+        ],
+
+        roadmap: [
+            "Learn statistics",
+            "Learn Excel",
+            "Learn Python",
+            "Learn data analysis",
+            "Study healthcare datasets",
+            "Build dashboards",
+            "Apply for internships"
+        ]
+    },
+
+
+    {
+        name: "Mechanical / Design Engineer",
+
+        interests: ["Engineering"],
+
+        education: [
+            "Diploma",
+            "Bachelor's",
+            "Master's"
+        ],
+
+        skills: [
+            "cad",
+            "autocad",
+            "design",
+            "mechanical"
+        ],
+
+        develop: [
+            "CAD",
+            "AutoCAD",
+            "Engineering Drawing",
+            "3D Modelling"
+        ],
+
+        projects: [
+            "3D Mechanical Model",
+            "Machine Component Design",
+            "CAD Mini Project"
+        ],
+
+        roadmap: [
+            "Learn engineering drawing",
+            "Learn CAD",
+            "Learn AutoCAD",
+            "Learn 3D modelling",
+            "Build design projects",
+            "Create portfolio",
+            "Apply for internships"
+        ]
+    }
+
+];
+
+
+/* =========================================================
+   RURAL OPPORTUNITY DATA
+   ========================================================= */
+
+const ruralData = {
+
+    "Maharashtra": [
+        "Agriculture and farming opportunities",
+        "Dairy and livestock activities",
+        "Food processing and small businesses",
+        "Skill development programs",
+        "Self-employment opportunities"
+    ],
+
+    "Karnataka": [
+        "Agriculture and horticulture",
+        "Dairy farming",
+        "Handicrafts and local businesses",
+        "Rural entrepreneurship",
+        "Skill development opportunities"
+    ],
+
+    "Tamil Nadu": [
+        "Agriculture and allied activities",
+        "Dairy farming",
+        "Textile and handicraft activities",
+        "Small-scale businesses",
+        "Skill development opportunities"
+    ],
+
+    "Uttar Pradesh": [
+        "Agriculture and farming",
+        "Dairy and livestock",
+        "Handicrafts",
+        "Small businesses",
+        "Rural entrepreneurship"
+    ]
+
+};
+
+
+/* =========================================================
+   EXPERIENCE DATA
+   ========================================================= */
+
+const experienceData = {
+
+    "No experience": [
+        "Start with basic skill training",
+        "Look for beginner-friendly opportunities",
+        "Join local skill development programs",
+        "Build practical experience through small projects"
+    ],
+
+    "1-2 years": [
+        "Look for entry-level employment",
+        "Improve your existing skills",
+        "Explore self-employment opportunities",
+        "Build a stronger work profile"
+    ],
+
+    "2-5 years": [
+        "Look for better employment opportunities",
+        "Consider starting a small business",
+        "Develop advanced skills",
+        "Explore entrepreneurship programs"
+    ],
+
+    "5+ years": [
+        "Explore leadership opportunities",
+        "Consider expanding your livelihood activity",
+        "Explore entrepreneurship",
+        "Train others using your experience"
+    ]
+
+};
+
+
+/* =========================================================
+   HELPER FUNCTION
+   ========================================================= */
+
+function escapeHTML(text) {
+
+    return String(text)
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#039;");
+
+}
+
+
+/* =========================================================
+   STUDENT RECOMMENDATION ENGINE
+   ========================================================= */
+
+function recommendCareer() {
+
+    const name =
+        document.getElementById("studentName").value.trim();
+
+    const education =
+        document.getElementById("eduLevel").value;
+
+    const skillsInput =
+        document.getElementById("skills").value.trim();
+
+    const interest =
+        document.getElementById("interest").value;
+
+    const results =
+        document.getElementById("studentResults");
+
+
+    /* Validation */
+
+    if (!name || !education || !skillsInput || !interest) {
+
+        results.innerHTML = `
+            <div class="result-card">
+                <h3>⚠️ Please complete all fields</h3>
+                <p>
+                    Enter your name, education, skills and career interest.
+                </p>
+            </div>
+        `;
+
+        return;
+    }
+
+
+    /* Convert skills into lowercase */
+
+    const userSkills = skillsInput
+        .split(",")
+        .map(skill => skill.trim().toLowerCase())
+        .filter(skill => skill !== "");
+
+
+    /* Calculate career scores */
+
+    let recommendations = careerData.map(career => {
+
+        let score = 0;
+
+        let matchedSkills = [];
+
+
+        /* Interest matching */
+
+        if (career.interests.includes(interest)) {
+            score += 5;
+        }
+
+
+        /* Education matching */
+
+        if (career.education.includes(education)) {
+            score += 3;
+        }
+
+
+        /* Skills matching */
+
+        career.skills.forEach(skill => {
+
+            if (userSkills.includes(skill)) {
+
+                score += 2;
+
+                matchedSkills.push(skill);
+            }
+
+        });
+
+
+        return {
+            ...career,
+            score: score,
+            matchedSkills: matchedSkills
+        };
+
+    });
+
+
+    /* Sort highest score first */
+
+    recommendations.sort(
+        (a, b) => b.score - a.score
+    );
+
+
+    /* Get top 3 */
+
+    const topRecommendations =
+        recommendations.slice(0, 3);
+
+
+    /* Maximum possible score */
+
+    const maxScore = 5 + 3 + 6;
+
+
+    let output = `
+
+        <div class="result-card">
+
+            <h3>👋 Hello ${escapeHTML(name)}!</h3>
+
+            <p>
+                Based on your education, skills and interests,
+                here are your personalized career suggestions.
+            </p>
+
+            <div class="info-box">
+                This prototype uses a rule-based recommendation engine
+                to match your profile with career paths.
+            </div>
+
+        </div>
+    `;
+
+
+    topRecommendations.forEach((career, index) => {
+
+        let percentage =
+            Math.round((career.score / maxScore) * 100);
+
+        if (percentage > 100) {
+            percentage = 100;
+        }
+
+
+        output += `
+
+        <div class="result-card">
+
+            <span class="score">
+                Match ${percentage}%
+            </span>
+
+            <h3>
+                ${index + 1}. ${escapeHTML(career.name)}
+            </h3>
+
+            <p>
+                <strong>Matching Skills:</strong>
+            </p>
+
+            <div>
+                ${
+                    career.matchedSkills.length > 0
+                    ?
+                    career.matchedSkills
+                        .map(skill =>
+                            `<span class="tag">
+                                ${escapeHTML(skill)}
+                            </span>`
+                        )
+                        .join("")
+                    :
+                    `<span class="tag">No direct skill match</span>`
+                }
+            </div>
+
+
+            <p>
+                <strong>Skills to Develop:</strong>
+            </p>
+
+            <ul>
+                ${
+                    career.develop
+                        .map(skill =>
+                            `<li>${escapeHTML(skill)}</li>`
+                        )
+                        .join("")
+                }
+            </ul>
+
+
+            <p>
+                <strong>Suggested Projects:</strong>
+            </p>
+
+            <ul>
+                ${
+                    career.projects
+                        .map(project =>
+                            `<li>${escapeHTML(project)}</li>`
+                        )
+                        .join("")
+                }
+            </ul>
+
+
+            <p>
+                <strong>Career Roadmap:</strong>
+            </p>
+
+            <ul>
+                ${
+                    career.roadmap
+                        .map(step =>
+                            `<li>${escapeHTML(step)}</li>`
+                        )
+                        .join("")
+                }
+            </ul>
+
+        </div>
+
+        `;
+
+    });
+
+
+    results.innerHTML = output;
+
+}
+
+
+/* =========================================================
+   RURAL OPPORTUNITY ENGINE
+   ========================================================= */
+
+function findRuralOpportunities() {
+
+    const name =
+        document.getElementById("ruralName").value.trim();
+
+    const state =
+        document.getElementById("state").value;
+
+    const experience =
+        document.getElementById("experience").value;
+
+    const language =
+        document.getElementById("language").value;
+
+    const results =
+        document.getElementById("ruralResults");
+
+
+    /* Validation */
+
+    if (!name || !state || !experience || !language) {
+
+        results.innerHTML = `
+
+            <div class="result-card">
+
+                <h3>⚠️ Please complete all fields</h3>
+
+                <p>
+                    Enter your name, state, experience and language.
+                </p>
+
+            </div>
+
+        `;
+
+        return;
+    }
+
+
+    /* Get opportunities */
+
+    const stateOpportunities =
+        ruralData[state] || [];
+
+    const experienceOpportunities =
+        experienceData[experience] || [];
+
+
+    /* Combine both */
+
+    const opportunities = [
+        ...stateOpportunities,
+        ...experienceOpportunities
+    ];
+
+
+    let output = `
+
+        <div class="result-card">
+
+            <h3>
+                👋 Hello ${escapeHTML(name)}!
+            </h3>
+
+            <p>
+                <strong>State:</strong>
+                ${escapeHTML(state)}
+            </p>
+
+            <p>
+                <strong>Experience:</strong>
+                ${escapeHTML(experience)}
+            </p>
+
+            <p>
+                <strong>Preferred Language:</strong>
+                ${escapeHTML(language)}
+            </p>
+
+        </div>
+
+
+        <div class="result-card">
+
+            <h3>🌱 Suggested Opportunities</h3>
+
+            <ul>
+
+                ${
+                    opportunities
+                        .map(opportunity =>
+                            `<li>${escapeHTML(opportunity)}</li>`
+                        )
+                        .join("")
+                }
+
+            </ul>
+
+        </div>
+
+
+        <div class="result-card">
+
+            <h3>📌 Recommended Next Steps</h3>
+
+            <ul>
+
+                <li>
+                    Identify your strongest existing skill.
+                </li>
+
+                <li>
+                    Choose one skill to improve.
+                </li>
+
+                <li>
+                    Look for verified local training and employment programs.
+                </li>
+
+                <li>
+                    Gain practical experience through small projects or work.
+                </li>
+
+                <li>
+                    Build a simple profile describing your skills and experience.
+                </li>
+
+            </ul>
+
+            <div class="info-box">
+
+                The opportunities shown here are demonstration data
+                for the hackathon prototype. Actual government schemes,
+                eligibility and job availability should be verified using
+                official sources.
+
+            </div>
+
+        </div>
+
+    `;
+
+
+    results.innerHTML = output;
+
+}
+
+</script>
+
+</body>
+</html>
